@@ -11,10 +11,10 @@ unset PYSPARK_PYTHON
 
 # DOWNLOAD a.parquet or any parquet file before you run this
 
-hdfs dfs -put -f a.parquet / && \
+hdfs dfs -put -f i.parquet / && \
     spark-submit prepare_data.py && \
     echo "Putting data to hdfs" && \
     hdfs dfs -put data / && \
     hdfs dfs -ls /data && \
-    hdfs dfs -ls /index/data && \
-    echo "done data preparation!"
+    # hdfs dfs -ls /index/data && \
+    # echo "done data preparation!"
